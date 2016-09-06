@@ -1,0 +1,50 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\outcome{Familiarization with Desmos graphs}
+
+\title{Interactive graphs with Desmos}
+
+\begin{document}
+
+\begin{abstract}
+Abstract goes here.
+\end{abstract}
+
+\maketitle
+
+
+
+The {\sf graph} command is pretty powerful and rely on \link[Desmos]{https://www.desmos.com/} widget.
+
+The following options are allowed for {\sf graph} command: {\sf panel, xmin, xmax, ymin, ymax, polar, hideXAxis, hideYAxis, xAxisLabel, yAxisLabel, hideXAxisNumbers, hideYAxisNumbers, projectorMode, thinMode, height}.
+
+The simplest example without any options:
+\[
+\graph{y=x^2}
+\]
+
+Advanced example with 3 graphs in polar coordinates (looks bad in a {\sf pdf} document, but great in a browser):
+\[
+\graph[polar,thinMode,xmin=-40,xmax=40,ymin=-20,ymax=20,hideXAxis]{
+r(\theta )=9-3\sin \theta +2\sin \left(3\theta \right)-3\sin (7\theta )+5\cos (2\theta );
+r(\theta )=8-2\sin \theta +3\sin \left(3\theta \right)-2\sin (7\theta )+4\cos (2\theta );
+r(\theta )=7-1\sin \theta +4\sin \left(3\theta \right)-1\sin (7\theta )+3\cos (2\theta )
+}
+\]
+
+One more example complex example with derivative and sliding point:
+\[
+\graph[thinMode,xmin=-5,xmax=5,ymin=-10,ymax=10]{
+f(x)=x^3-4x;
+g(x)=\frac{d}{dx}f(x);
+a=-1;
+(a,f(a));
+h(x)=g(a)x + (f(a)-g(a)a)
+}
+\]
+
+Further, look for inspiration here - \link[https://www.desmos.com/math]{https://www.desmos.com/math}.
+
+\end{document}

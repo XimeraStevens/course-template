@@ -1,0 +1,47 @@
+\documentclass{ximera}
+
+\input{../preamble.tex}
+
+\outcome{Familiarization with Gradarius cells}
+
+\title{Gradarius cells}
+
+\begin{document}
+
+\begin{abstract}
+Abstract goes here.
+\end{abstract}
+
+\maketitle
+
+Use {\sf grdcell} command to embed \link[Gradarius]{http://www.gradarius.com/} cells.
+It accepts {\sf type} and {\sf label} parameters.
+The {\sf type} parameter can be on of the following: {\sf derivative, integral, limit}, and
+the {\sf label} parameter is used to identify the cell.
+For each {\sf type} you need to enter a proper expression in the form:
+\begin{itemize}
+\item $\frac{d}{dx} f(x)$ for {\sf derivative}.
+\item $\int{f(x) dx}$ for {\sf integral}.
+\item $\lim_{x \to a} f(x)$ for {\sf limit}.
+\end{itemize}
+
+\begin{gradarius}
+Write derivative of $f(x) = e^{\sin x^2}$ in the cell below:
+$\grdcell[type=derivative,label=grd:der]{\frac{d}{dx}(e^{\sin( x^2)})}$
+\end{gradarius}
+
+\begin{gradarius}
+Compute $\int x \sin x \; \mathrm{dx}$ and write answer in the cell below:
+$\grdcell[type=integral,label=grd:int]{\int{x \sin(x) dx}}$
+\end{gradarius}
+
+\begin{gradarius}
+Compute $\lim_{x \to 1} \frac{x^2+2x-3}{x-1}$ and write answer in the cell below:
+$\grdcell[type=limit,label=grd:lim]{\lim_{x \to 1} \frac{x^2+2x-3}{x-1}}$
+You can continue your question here and add other interactive elements.
+\end{gradarius}
+
+Actually, you do not have to use {\sf grdcell} only inside {\sf gradarius} environment, so any other {\it question} environments can be used.
+
+
+\end{document}
